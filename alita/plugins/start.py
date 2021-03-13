@@ -114,6 +114,9 @@ async def gen_start_kb(q):
 async def start(_, m: Message):
 
     if m.chat.type == "private":
+        if m.command[1] == "help":
+            await m.reply_text("Works!!")
+            return
         try:
             await m.reply_text(
                 (tlang(m, "start.private")),
